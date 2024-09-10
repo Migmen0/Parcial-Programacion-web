@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="parcial1.css">
+    <style>
+        .registro-container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .registro-container h2 {
+            text-align: center;
+        }
+
+        .registro-container input,
+        .registro-container select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .registro-container button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 5px 0;
+        }
+
+        .registro-container button.submit {
+            background-color: #007bff;
+        }
+
+        .registro-container button.submit:hover {
+            background-color: #0056b3;
+        }
+
+        .registro-container button.cancel {
+            background-color: #dc3545;
+        }
+
+        .registro-container button.cancel:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body id="pagina">
+    <header>
+        <h1>Programación Web</h1>
+        <nav>
+            <ul>
+                <li><a href="parcial1.html">Inicio</a></li>
+                <li><a href="programas.html">Programas</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="registro-container">
+            <h2>Registro</h2>
+            <form id="registroForm">
+                <input type="text" id="firstName" placeholder="Nombre" required>
+                <input type="text" id="lastName" placeholder="Apellido" required>
+                <input type="tel" id="phone" placeholder="Teléfono" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="text" id="estrato" placeholder="Estrato" required>
+                <input type="date" id="dob" placeholder="Fecha de Nacimiento" required>
+                <select id="bloodGroup" required>
+                    <option value="">Grupo Sanguíneo</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+                <select id="gender" required>
+                    <option value="">Género</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Otro">Otro</option>
+                </select>
+                <input type="password" id="password" placeholder="Contraseña" required>
+                <button type="button" class="submit" onclick="registrar()">Registrar</button>
+                <button type="button" class="cancel" onclick="cancel()">Cancelar</button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        const usuarios = [];
+
+        function registrar() {
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const estrato = document.getElementById('estrato').value;
+            const dob = document.getElementById('dob').value;
+            const bloodGroup = document.getElementById('bloodGroup').value;
+            const gender = document.getElementById('gender').value;
+            const password = document.getElementById('password').value;
+
+            if (!firstName || !lastName || !phone || !email || !estrato || !dob || !bloodGroup || !gender || !password) {
+                alert('Por favor, complete todos los campos.');
+                return;
+            }
+
+            usuarios.push({ firstName, lastName, phone, email, estrato, dob, bloodGroup, gender, password });
+            alert('Registro exitoso.');
+            window.location.href = "login.html";
+        }
+
+        function cancel() {
+            window.location.href = "parcial1.html"; 
+        }
+    </script>
+</body>
+</html>

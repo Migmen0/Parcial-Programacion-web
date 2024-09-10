@@ -1,0 +1,120 @@
+
+
+            <!DOCTYPE html>
+            <html lang="es">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Cursos</title>
+                <link rel="stylesheet" href="parcial1.css">
+                <style>
+                    #cursos {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-around;
+                        padding: 20px;
+                    }
+            
+                    .curso {
+                        width: 30%;
+                        margin-bottom: 20px;
+                        padding: 10px;
+                        border: 1px solid #ccc;
+                        border-radius: 10px;
+                        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+                        text-align: center;
+                    }
+            
+                    .curso img {
+                        width: 100%;
+                        height: auto;
+                        border-radius: 10px;
+                    }
+            
+                    .curso button {
+                        margin-top: 10px;
+                        padding: 10px 20px;
+                        border: none;
+                        border-radius: 5px;
+                        background-color: #007bff;
+                        color: white;
+                        cursor: pointer;
+                        transition: background-color 0.3s ease;
+                    }
+            
+                    .curso button:hover {
+                        background-color: #0056b3;
+                    }
+                </style>
+            </head>
+            <body id="pagina">
+                <header>
+                    <h1>Programación Web</h1>
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="programas.html">Programas</a></li>
+                            <li><a href="cursos.html">Cursos</a></li>
+                            <li><a href="login.html">Login</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            
+                <main>
+                    <section id="cursos">
+                        <div class="curso">
+                            <img src= "C:\Users\angel\Downloads\Programacion web\imagenes\petroleo.jpeg" alt="Programa 2">
+                            <h2>Ingenieria de Petroleos</h2>
+                            <p> La Ingeniería en Petróleo se enfoca en la exploración, extracción y producción de petróleo y gas. Los estudiantes adquieren conocimientos en técnicas de perforación y gestión de reservas.</p>
+                            <button onclick="suscribirse('Curso 1')">Suscribirse</button>
+                        </div>
+
+
+                        <div class="curso">
+                            <img src="C:\Users\angel\Downloads\Programacion web\imagenes\software.jpeg"alt="Programa 1">
+                            <h2>Ingenieria de Software</h2>
+                            <p>La Ingeniería en Software se centra en el diseño, desarrollo y mantenimiento de sistemas de software. Los estudiantes aprenden a crear aplicaciones eficientes y seguras, utilizando las últimas tecnologías en programación.</p>
+                            <button onclick="suscribirse('Curso 2')">Suscribirse</button>
+                        </div>
+            
+                        
+            
+                        <div class="curso">
+                            <img src= "C:\Users\angel\Downloads\Programacion web\imagenes\civil.jpeg" alt="Programa 3">
+                            <h2>Ingenieria civil</h2>
+                            <p> La Ingeniería Civil se dedica al diseño y construcción de infraestructuras como puentes, edificios y carreteras. Los estudiantes aprenden sobre estructuras, materiales y gestión de proyectos.</p>.</p>
+                            <button onclick="suscribirse('Curso 3')">Suscribirse</button>
+                        </div>
+            
+                        <div class="curso">
+                            <img src="C:\Users\angel\Downloads\Programacion web\imagenes\agroindustria.jpeg" alt="Programa 4">
+                            <h2>Ingenieria agroindustrial</h2>
+                            <p> La Ingeniería Agroindustrial se ocupa de la optimización de procesos en la producción agrícola y la industria alimentaria. Los estudiantes aprenden sobre tecnología y gestión en la agroindustria.</p>
+                            <button onclick="suscribirse('Curso 4')">Suscribirse</button>
+                        </div>
+            
+                        <div class="curso">
+                            <img src= "C:\Users\angel\Downloads\Programacion web\imagenes\ingles.jpeg"alt="Programa 5">
+                            <h2>Licenciatura de Ingles</h2>
+                            <p>La Licenciatura en Inglés se centra en el desarrollo avanzado de habilidades lingüísticas en inglés y la comprensión de la literatura anglófona. Ideal para futuros educadores y traductores.</p>
+                            <button onclick="suscribirse('Curso 5')">Suscribirse</button>
+                        </div>
+            
+                        <div class="curso">
+                            <img src="C:\Users\angel\Downloads\Programacion web\imagenes\español.jpeg"alt="Programa 6">
+                            <h2>Licenciatura de español</h2>
+                            <p> La Licenciatura en Español se enfoca en el estudio del idioma español, su literatura y cultura. Prepara a los estudiantes para roles en enseñanza, escritura y traducción.</p>
+                            <button onclick="suscribirse('Curso 6')">Suscribirse</button>
+                        </div>
+            
+                    </section>
+                </main>
+            
+                <script>
+                    function suscribirse(curso) {
+                        window.location.href = "login.html?curso=" + encodeURIComponent(curso);
+                    }
+                </script>
+            </body>
+            </html>
+            

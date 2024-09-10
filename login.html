@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="parcial1.css">
+    <style>
+       
+        .login-container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container h2 {
+            text-align: center;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 5px 0;
+        }
+
+        .login-container button.log-in {
+            background-color: #007bff;
+        }
+
+        .login-container button.log-in:hover {
+            background-color: #0056b3;
+        }
+
+        .login-container button.sign-up {
+            background-color: #28a745;
+        }
+
+        .login-container button.sign-up:hover {
+            background-color: #218838;
+        }
+
+        .login-container button.cancel {
+            background-color: #dc3545;
+        }
+
+        .login-container button.cancel:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body id="pagina">
+    <header>
+        <h1>Programación Web</h1>
+        <nav>
+            <ul>
+                <li><a href="parcial1.html">Inicio</a></li>
+                <li><a href="programas.html">Programas</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="login-container">
+            <h2>Iniciar Sesión</h2>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Nombre de usuario" required>
+                <input type="password" id="password" placeholder="Contraseña" required>
+                <button type="button" class="log-in" onclick="login()">Log In</button>
+                <button type="button" class="sign-up" onclick="signUp()">Sign Up</button>
+                <button type="button" class="cancel" onclick="cancel()">Cancelar</button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        const CREDENCIALES = { username: 'usuario', password: 'contraseña' }; // Define tus credenciales aquí
+        let contador = 0;
+
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const params = new URLSearchParams(window.location.search);
+            const curso = params.get('curso');
+
+            if (username === CREDENCIALES.username && password === CREDENCIALES.password) {
+                console.log(`${curso} ha sido agregado.`);
+                contador++;
+                console.log(`Número total de inscripciones: ${contador}`);
+                alert('Has sido inscrito exitosamente.');
+                
+            } else {
+                alert('Credenciales incorrectas.');
+            }
+        }
+
+        function signUp() {
+            window.location.href = "registro.html"; }
+
+        function cancel() {
+            window.location.href = "parcial1.html"; 
+        }
+    </script>
+</body>
+</html>

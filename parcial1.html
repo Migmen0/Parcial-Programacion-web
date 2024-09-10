@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Párcial</title>
+    <link rel="stylesheet" href="parcial1.css">
+</head>
+<body id="pagina">
+    <header>
+        <h1>Programación Web</h1>
+        <nav>
+            <ul>
+                <li><a href="parcial1.html">Inicio</a></li>
+                <li><a href="programas.html">Programas</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="banner">
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide"><img src="C:\Users\angel\Downloads\Programacion web\imagenes\trapecio.jpeg" alt="Imagen 1"></div>
+                    <div class="slide"><img src="C:\Users\angel\Downloads\Programacion web\imagenes\rombo.jpg" alt="Imagen 2"></div>
+                    <div class="slide"><img src="C:\Users\angel\Downloads\Programacion web\imagenes\triagulo.jpg" alt="Imagen 3"></div>
+                    <div class="slide"><img src="C:\Users\angel\Downloads\Programacion web\imagenes\cuadrado.webp" alt="Imagen 4"></div>
+                    <div class="slide"><img src="C:\Users\angel\Downloads\Programacion web\imagenes\circulo.jpg" alt="Imagen 5"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contenido">
+            <p id="texto">Era una vez una casa en la montaña.</p>
+            <button onclick="cambiarContenido()">Cambiar contenido</button>
+            <button onclick="cambiarColor()">Cambiar Color de la Página</button>
+        </section>
+    </main>
+
+    <script>
+        function cambiarContenido() {
+            document.getElementById('texto').innerHTML = "El contenido ha cambiado!";
+        }
+
+        function cambiarColor() {
+            document.getElementById('pagina').style.backgroundColor = "#e0f7fa";
+        }
+
+        let slideIndex = 0;
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 3000); 
+        }
+        showSlides();
+    </script>
+</body>
+</html>
